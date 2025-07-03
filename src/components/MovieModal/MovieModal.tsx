@@ -8,6 +8,9 @@ export interface MovieModalProps {
   onClose: () => void;
 }
 
+
+
+
 const modalRoot = document.getElementById('modal-root')!;
 
 const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
