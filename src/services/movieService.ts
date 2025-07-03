@@ -1,5 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
-import { Movie } from '../types/movie';
+import axios from 'axios';
+import type { AxiosResponse } from 'axios';
+import type { Movie } from '../types/movie';
 
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL as string;
 const TOKEN    = import.meta.env.VITE_TMDB_TOKEN   as string;
