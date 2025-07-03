@@ -1,5 +1,4 @@
 import axios from 'axios';
-import type { AxiosResponse } from 'axios';
 import type { Movie } from '../types/movie';
 
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL as string;
@@ -17,12 +16,12 @@ export const fetchMovies = async (
   query: string,
   page = 1
 ): Promise<Movie[]> => {
-  const response: AxiosResponse<TMDBSearchResponse> = await axios.get(
+ const { data } = await axios.get<TMDBSearchResponse>(
     `${BASE_URL}/search/movie`,
     {
       params: { query: query.trim(), page },
       headers: { Authorization: `Bearer ${TOKEN}` },
     }
   );
-  return response.data.results;
+  return data.results;
 };
